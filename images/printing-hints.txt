@@ -1,0 +1,3 @@
+Both of these images were created by created by Ivo van der Horst, available at [ http://www.boardgamegeek.com/image/407682/scotland-yard ]
+
+According to the comments on that page, the file I've saved as "medium-res-map.jpg" is designed to be full size when printed at 125 pixels per inch (ppi), and the file I've saved as "high-res-map.jpg" should print at 500 ppi.

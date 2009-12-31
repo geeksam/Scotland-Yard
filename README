@@ -1,0 +1,7 @@
+I played the Scotland Yard board game on Christmas 2009, and was quite amused to note that it's basically a search-evasion graph game.  It seemed to me (based on one quick and one long game) that the game was rather unbalanced in favor of Mr. X [at least, if the person playing Mr. X is reasonably good at it].
+
+So, I decided that it might be fun to write a tool that would help the detectives figure out where Mr. X could possibly be, given the information about his last known whereabouts and the kind of tickets he used.
+
+At the moment, this is purely for my own entertainment, but if you find it interesting, by all means let me know.
+
+I took a photo of the actual board, but as of this writing it's on my other computer.  So I used the alternate version created by Ivo van der Horst, available at [ http://www.boardgamegeek.com/image/407682/scotland-yard ].  Ivo notes that different versions of the game have incompatible graphs -- I'll take his word for it, but keep in mind that you may want to check your board against the graph if you want to try to actually use this in gameplay.
