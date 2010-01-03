@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), *%w[test_helper])
 require 'boards/small_board'
 
-class TestSmallBoard < Test::Unit::TestCase
+class SmallBoardTest < Test::Unit::TestCase
 
   EdgesAsymmetric = {
     1 => { :yellow => [2] },
