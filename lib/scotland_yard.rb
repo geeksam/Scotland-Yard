@@ -37,4 +37,42 @@ module ScotlandYard
       end
     end
   end
+
+  def dotfile_from_board(board_hash, graph_name, options = {})
+    filename = File.join(File.dirname(__FILE__), 'boards', graph_name + '.dot')
+    label_width = board_hash.keys.map { |e| e.to_s.length }.max
+
+    File.open(filename, 'w') do |file|
+      # Open graph
+      file << "graph scotland_yard {\n"
+
+      # Write nodes
+      file << "/***** NODES *****/\n"
+      if options[:label_nodes]
+        board_hash.to_a.each do |node, hash|
+          code  = hash.map { |ticket, nodes| [ticket.to_s.upcase[/^./], nodes.length].join }.sort.join(' ').gsub(/B\d+/, '')
+          label = "#{node} (#{code})"
+          file << "\t%#{label_width}s [label=\"%s\"]\n" % [node, label]
+        end
+        file << "\n\n"
+      end
+
+      # Write edges
+      file << "/***** EDGES *****/\n"
+      board_hash.to_a.sort.each do |this_node, edge_hash|
+        edge_hash.each do |color, nodes|
+          nodes.sort.each do |that_node|
+            next if this_node > that_node
+            attributes = ["width=3", "color=#{color}"]
+            attributes << "style=dotted" if color == :red
+            file << "\t%#{label_width}s -- %#{label_width}s [%s]\n" % [this_node, that_node, attributes.join(', ')]
+          end
+        end
+        file << "\n"
+      end
+
+      # Close graph
+      file << "}\n"
+    end
+  end
 end
